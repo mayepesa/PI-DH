@@ -1,0 +1,138 @@
+:root {
+  --first-color: #867070;
+  --second-color: #d5b4b4;
+  --third-color: #e4d0d0;
+  --fourth-color: #f5ebeb;
+}
+
+.header {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  color: aqua;
+  background-color: var(--fourth-color);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.logo_header {
+  width: 4em;
+}
+
+.logo_header:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.lema{
+  color: var(--second-color);
+  align-self: center;
+}
+
+.img_cont {
+  width: 100%;
+  display: flex;
+  align-self: center;
+}
+
+.button_cont_login {
+  margin: 0.5em;
+}
+
+.button_cont_register {
+  margin: 0.5em;
+}
+
+.buttons_cont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex_content_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.button_register {
+  border-radius: 1em;
+  width: 15em;
+  height: 3em;
+  background-color: var(--third-color);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.button_login {
+  border-radius: 1em;
+  width: 15em;
+  height: 3em;
+  background-color: var(--third-color);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.button_register:hover,
+.button_login:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  background-color: var(--second-color);
+}
+
+.avatar_container{
+  display: flex;
+  align-items: center;
+
+}
+
+.user_name{
+  color: var(--first-color);
+  margin: 0 1rem;
+}
+
+.menu{
+  margin-right: 1rem;
+}
+
+@media (max-width: 425px) {
+  .flex_content_main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo_header {
+    width: 2em;
+  }
+
+  .img_cont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttons_cont {
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button_cont_login {
+    margin: 0.1em;
+  }
+
+  .button_cont_register {
+    margin: 0.1em;
+  }
+
+  .button_register {
+    width: 8em;
+  }
+
+  .button_login {
+    width: 8em;
+  }
+}

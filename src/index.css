@@ -1,0 +1,26 @@
+:root {
+  --first-color: #867070;
+  --second-color: #D5B4B4;
+  --third-color: #E4D0D0;
+  --fourth-color: #F5EBEB;
+}
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+background-color: var(--fourth-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,103 @@
+:root {
+    --first-color: #867070;
+    --second-color: #D5B4B4;
+    --third-color: #E4D0D0;
+    --fourth-color: #F5EBEB;
+}
+
+/*General del footer*/
+.footer {
+    width: 100%;
+    background-color: var(--first-color); 
+    color: #fff; 
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media (min-width: 425px){
+  /*div logo*/
+  /*.content_logo{
+
+  }*/
+
+  /*img logo*/
+  .logo_footer{
+    width: 7%;
+  }
+
+  /*Redes sociales*/
+  .redes_sociales{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.8em;
+    padding-left: 75%;
+    margin-top: -4.5%;
+    padding-bottom: 3%;
+}
+
+  /*Imagenes de redes*/
+  .facebook_svg{
+    width: 2em;
+    height: auto;
+  }
+  .twitter_svg{
+    width: 2em;
+    height: auto;
+  }
+  .instagram_svg{
+    width: 2em;
+    height: auto;
+  }
+
+  /*copy*/
+  .copyright{
+    display: flex;
+    margin-left: 7%;
+    margin-top: -5.5%;
+  }
+
+  /*imagen copy*/
+  .copyright_svg{
+    width: 0.8em;
+    height: auto;
+    
+}
+
+  
+  /*.copyright_nombre{
+    
+  }*/
+}
+  @media (max-width: 425px) {
+
+    .redes_sociales {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5em;
+        padding-top: 25%;
+        padding-left: 20%;
+        
+    }
+
+    .copyright{
+        display: flex;
+        margin-left: 5.5%;
+        margin-top: -38%;
+      }
+
+      .logo_footer{
+        width: 50%;
+        margin-left: 20%;
+      }
+
+      .copyright_svg{
+        width: 0.8em;
+        height: auto;
+    }
+
+}

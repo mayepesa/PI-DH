@@ -1,0 +1,58 @@
+:root {
+  --first-color: #867070;
+  --second-color: #d5b4b4;
+  --third-color: #e4d0d0;
+  --fourth-color: #f5ebeb;
+}
+
+.title {
+  color: var(--first-color);
+  display: flex;
+  justify-content: center;
+}
+
+.recomendados_content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--second-color);
+  padding: 0.5rem 0 2rem 0;
+}
+
+.grid_container {
+  display: flex;
+  justify-content: center;
+}
+
+.card_grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.link {
+  text-decoration: none;
+}
+
+@media (max-width: 1400px) {
+  .card_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .card_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .card_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+}

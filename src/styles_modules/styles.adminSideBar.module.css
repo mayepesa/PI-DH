@@ -1,0 +1,4 @@
+.container{
+    background-color: var(--second-color);
+    min-width: 18%;
+}

@@ -1,0 +1,27 @@
+.title {
+  color: var(--first-color);
+  width: 100%;
+  margin-top: 1em;
+}
+
+.sub_title {
+  margin-bottom: 2em;
+}
+
+.content {
+  margin-left: 3em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18em;
+}
+
+.label {
+  width: 100%;
+  color: var(--first-color);
+  background-color: var(--second-color);
+}
+
+.MuiFormGroup-root .css-dmmspl-MuiFormGroup-root {
+  color: aqua;
+}

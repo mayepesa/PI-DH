@@ -1,0 +1,117 @@
+.title {
+  margin-top: 2em;
+  text-align: center;
+  color: var(--first-color);
+}
+
+.subTitle {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6em;
+}
+
+.modal {
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  background-color: var(--third-color);
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+}
+
+.btn_editar {
+  border: none;
+  color: var(--first-color);
+  padding: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_eliminar {
+  border: none;
+  color: var(--first-color);
+  padding: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_insertar {
+  border: none;
+  color: var(--first-color);
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_modal_aceptar {
+  border: none;
+  color: white;
+  background-color: var(--first-color);
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_modal_aceptar:hover {
+  background: var(--second-color);
+  opacity: 0.5;
+}
+
+.btn_modal_cancelar {
+  border: none;
+  color: white;
+  background-color: var(--first-color);
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_modal_cancelar:hover {
+  background: var(--second-color);
+  opacity: 0.5;
+}
+
+.inputModal {
+  width: 90%;
+}
+
+.btn_contasiner {
+  text-align: center;
+  margin-top: 5em;
+}
+
+.container_btn_insertar {
+  text-align: center;
+  background-color: var(--fourth-color);
+  border-radius: 5px;
+}
+
+.button_insertar {
+  color: black;
+}
+
+.title_modal {
+  margin-bottom: 3em;
+}
+
+.imagen {
+  width: 3em;
+  border-radius: 5px;
+}
+
+.modal_content {
+  background-color: white;
+  border-radius: 16px;
+  width: 200px;
+  outline: none;
+}

@@ -1,0 +1,116 @@
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    width: 860px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--first-color);
+  }
+  
+  .formWrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+  
+  .textField {
+    margin-right: 10px;
+    flex-grow: 1;
+    height: 56px;
+    margin-bottom: 10px;
+  }
+  
+  .iconSelect {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .select {
+    height: 56px;
+    width: 56px;
+  }
+  
+  .container .addButton {
+    background-color: var(--first-color);
+    color: white;
+    text-transform: none;
+    white-space: nowrap;
+    height: 56px;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  .icon {
+    color: var(--first-color);
+    margin-right: 16px;
+  }
+  
+  
+  
+  .description {
+    flex-grow: 1;
+  }
+  
+  .container .editButton, .deleteButton {
+    margin-left: 15px;
+  }
+  
+  .container .editButton {
+    background-color: var(--second-color);
+    color: white;
+    margin-right: 8px;
+  }
+  
+  
+  .container .deleteButton {
+    background-color: var(--first-color);
+    color: white;
+  }
+  
+  @media (max-width: 600px) {
+    .formWrapper {
+      flex-direction: column;
+    }
+  
+    .textField, .iconSelect, .addButton {
+      width: 100%;
+      margin: 0 0 10px 0;
+      height: 56px;
+    }
+  
+    .cardsContainer {
+      flex-direction: column;
+    }
+  
+    .card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .editButton, .deleteButton {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
