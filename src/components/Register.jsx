@@ -20,6 +20,9 @@ const Register = () => {
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [registerErr, setRegisterErr] = useState(false);
 
+  // Expresión regular para validar el correo electrónico
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   const registrarUsuario = async (data) => {
     try {
       await axios.post("http://3.149.241.92:8080/register", data);
@@ -37,24 +40,45 @@ const Register = () => {
   };
 
   const handleRegister = () => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const passwordRegex = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ]/;
+    // Validación de todos los campos vacíos
+    if (
+      formValues.email === "" &&
+      formValues.nombre === "" &&
+      formValues.apellido === "" &&
+      formValues.password === ""
+    ) {
+      setEmailErr(true);
+      setNombreErr(true);
+      setApellidoErr(true);
+      setPassErr(true);
+      return;
+    }
 
-    if (formValues.email === "" && !emailRegex.test(formValues.email)) {
+    // Validación del correo electrónico
+    if (!emailRegex.test(formValues.email)) {
       setEmailErr(true);
     }
+
+    // Validación de la contraseña
     if (
-      formValues.password === "" &&
-      formValues.password.length < 8 &&
-      passwordRegex.test(formValues.password)
+      formValues.password.length < 8 ||
+      !/(?=.*[a-záéíóúüñ])(?=.*[A-ZÁÉÍÓÚÜÑ])(?=.*\d)/.test(formValues.password)
     ) {
       setPassErr(true);
     }
-    if (formValues.nombre.length < 2 || formValues.nombre === "")
-      setNombreErr(true);
 
-    if (formValues.apellido.length < 2 && formValues.nombre === "")
+    // Validación del nombre
+    if (/[^a-zA-Z]/.test(formValues.nombre) || formValues.nombre.length < 3) {
+      setNombreErr(true);
+    }
+
+    // Validación del apellido
+    if (
+      /[^a-zA-Z]/.test(formValues.apellido) ||
+      formValues.apellido.length < 3
+    ) {
       setApellidoErr(true);
+    }
 
     const valoresUsuario = {
       firstName: formValues.nombre,
@@ -68,11 +92,46 @@ const Register = () => {
 
   const handleOnChange = (e) => {
     const { value, name } = e.target;
-    if (name === "email") {
-      setEmailErr(false);
-    } else {
-      setPassErr(false);
+
+    // Validación del nombre
+    if (name === "nombre") {
+      if (/[^a-zA-Z]/.test(value) || value.length < 3) {
+        setNombreErr(true);
+      } else {
+        setNombreErr(false);
+      }
     }
+
+    // Validación del apellido
+    if (name === "apellido") {
+      if (/[^a-zA-Z]/.test(value) || value.length < 3) {
+        setApellidoErr(true);
+      } else {
+        setApellidoErr(false);
+      }
+    }
+
+    // Validación del correo electrónico
+    if (name === "email") {
+      if (!emailRegex.test(value)) {
+        setEmailErr(true);
+      } else {
+        setEmailErr(false);
+      }
+    }
+
+    // Validación de la contraseña
+    if (name === "password") {
+      if (
+        value.length < 8 ||
+        !/(?=.*[a-záéíóúüñ])(?=.*[A-ZÁÉÍÓÚÜÑ])(?=.*\d)/.test(value)
+      ) {
+        setPassErr(true);
+      } else {
+        setPassErr(false);
+      }
+    }
+
     setFormvalues({ ...formValues, [name]: value });
   };
 
@@ -92,7 +151,7 @@ const Register = () => {
           error={nombreErr}
           helperText={
             nombreErr &&
-            "El campo no puede estar vacio y debe tener mas de 3 caracteres"
+            "El campo no puede estar vacio y debe tener mas de 2 caracteres"
           }
         />
         <TextField
@@ -107,7 +166,7 @@ const Register = () => {
           error={apellidoErr}
           helperText={
             apellidoErr &&
-            "El campo no puede estar vacio y debe tener mas de 3 caracteres"
+            "El campo no puede estar vacio y debe tener mas de 2 caracteres"
           }
         />
         <TextField
@@ -120,7 +179,7 @@ const Register = () => {
           className={styles.input}
           onChange={(e) => handleOnChange(e)}
           error={emailErr}
-          helperText={emailErr && "Ingresa un correo válido"}
+          helperText={emailErr && "Ingresa un correo válido (email@email)"}
         />
 
         <TextField
@@ -134,7 +193,7 @@ const Register = () => {
           className={styles.input}
           onChange={(e) => handleOnChange(e)}
           error={passErr}
-          helperText={passErr && "Ingresa una contraseña"}
+          helperText={passErr && "Contraseña inválida (Debe tener por lo menos 8 caracteres y contener una mayuscula, una minuscula y un número"}
         />
         {registerErr && (
           <p className={styles.errorText}>

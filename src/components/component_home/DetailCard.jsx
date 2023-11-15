@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles_modules/styles.detailcard.module.css";
 
-const DetailCard = ({ img, title, subtitle }) => {
+const DetailCard = ({ id, img, title, subtitle }) => {
   return (
       <div className={styles.container}>
         <img className={styles.img} src={img} alt={title} />
