@@ -16,6 +16,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/categorias" element={<Categorias />}></Route>
@@ -38,7 +39,6 @@ const AppRoutes = () => {
           ></Route>
           <Route path="/detalle/:id" element={<ProductDetail />}></Route>
           <Route path="/categoria/:category" element={<Category />}></Route>
-          <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="*" element={<p>Error</p>} />
         </Route>
